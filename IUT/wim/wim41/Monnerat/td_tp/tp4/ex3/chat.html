@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<title></title>
+		<link rel="stylesheet" href="/tacit.css" type="text/css">
+		<link rel="stylesheet" href="./css/style.css">
+		<script src="js/chat.js"></script>
+	</head>
+	<body container>
+		<h3>Chat</h3>
+		<form  id="form_auth">
+			<input id="nom"  name="nom" type="text">
+			<button type="submit">Se connecter</button>
+		</form>
+		<div id="espace_chat">
+			<h3>Messages</h3>
+			<div id="messages"  style="height:600px;overflow-y:auto;" >
+				<ul  id="liste_message"></ul>
+			</div>
+			<br>
+			<form  id="form"  action="" method="post">
+				<input   name="message" id="message" type="text">  
+			</form>
+		</div>
+	</body>
+</html>

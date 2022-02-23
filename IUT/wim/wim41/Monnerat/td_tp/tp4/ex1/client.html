@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf8">
+		<link rel="stylesheet" href="./css/style.css">
+		<link rel="stylesheet" href="http://www.iut-fbleau.fr/css//tacit.css">
+		<script src="./js/echo_json.js"></script>
+		<title>Echo avec AJAX</title>
+	</head>
+	<body container="small">
+		<div id="spinner" class="spinner hide"></div>
+	</div>
+	<div grid>
+		<div column>
+			<h3>Client</h3>
+			<form>
+				<fieldset>
+				<label>Le message à envoyer
+				<input name="message" type="text" placeholder="Message">
+				</label>
+				<button type="submit">Envoyer</button>
+				</fieldset>
+			</form>		  
+		</div>
+		<div column style="overflow:auto;height:500px" >
+			<h3>Messages</h3>
+			<ul id="listeMessages">
+			</ul>	
+		</div>
+	</div>
+</body>
+</html>

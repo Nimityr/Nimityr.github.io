@@ -1,0 +1,24 @@
+body > div {
+	padding-top:10px;
+}
+film,div,.filtre{
+flex-wrap:wrap;
+}
+img{
+width:100%;
+}
+a:hover{
+cursor:pointer;
+}
+label{
+display:inline;
+
+}
+/*
+input[type="text"]{
+display:inline;
+width:auto;
+}
+input + button{
+display:inline;
+}*/

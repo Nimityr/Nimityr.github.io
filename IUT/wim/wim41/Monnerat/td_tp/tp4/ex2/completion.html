@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf8">
+	<link rel="stylesheet" href="http://www.iut-fbleau.fr/css/tacit.css">
+
+		<link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.css">
+		<link rel="stylesheet" href="css/style.css">
+		<script src="js/cp.js"></script>
+	</head>
+	<body>
+		<h2>TP AJAX</h2>
+		<form>
+			<div>
+				<label  for="codep">Code postal <a id="chercher"><i class="fa fa-search"></i>
+					</a>
+				</label><br>
+				<input type="number"  id="codep" />
+			</div>
+			<div>
+				<label  for="villes">Ville</label><br>
+				<select id="villes"></select>
+				<i id="working"></i>
+				<u  id="indication"></u>
+			</div>
+			<div>
+				<label  for="departement">Département</label><br>
+				<input type="text" id="departement"/>
+			</div>
+		</form>
+			<div style="display:none" id="nt"><h4>Erreur</h4>la ville n'a pas été trouvée.</div>
+	</body>
+</html>
+
+

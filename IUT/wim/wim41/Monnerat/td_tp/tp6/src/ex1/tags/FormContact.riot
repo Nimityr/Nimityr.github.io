@@ -1,0 +1,67 @@
+<formContact>
+<h4>Saisie</h4>
+<form>
+	<fieldset>
+		<div>
+			<label  for="prenom">Prénom</label><br>
+			<input id="prenom" name="prenom" placeholder="Prénom"   type="text" required>
+		</div>
+		<div>
+			<!-- Text input-->
+			<label  for="nom">Nom</label><br>
+			<input id="nom" name="nom" placeholder="Nom"  type="text" required>
+		</div>
+		<div>
+			<!-- Text input-->
+			<label  for="email">Email</label><br>
+			<input id="email" name="email" placeholder="Email"   type="email" required>
+		</div>
+		<!-- Button -->
+		<div>
+			<button onclick = { add } type={!props?.content ? "submit" : ""} disabled = {!!props?.content} > <i class="fa fa-plus" aria-hidden="true"></i></button>
+			<button onclick = { edit } type={props?.content ? "submit" : ""} disabled = {!props?.content}> <i class="fa fa-pencil" aria-hidden="true"></i></button>
+			<button onclick = { del } type={props?.content ? "submit" : "" } disabled = {!props?.content}> <i class="fa fa-trash-o" aria-hidden="true"></i></button>
+			<button onclick = { unsel } type="submit"> <i class="fa fa-refresh" aria-hidden="true"></i></button>
+			<!--button type="submit" id="ajouter" >Ajouter</button>
+			<button  type="reset" >Effacer</button-->
+		</div>
+	</fieldset>
+</form>
+
+
+<script>
+	export default {
+		onBeforeUpdate(props,state){
+			this.$('#nom').value = props?.content?.nom || ''
+			this.$('#prenom').value = props?.content?.prenom || ''
+			this.$('#email').value = props?.content?.email || ''
+		},
+		add(e){
+			let ct = this._getDataForm ()
+			e.preventDefault()
+			this.props.add(ct)
+		},
+		del(e){
+			e.preventDefault()
+			this.props.del(this.props.content)
+		},
+		edit(e){
+			let ct = this._getDataForm()
+			e.preventDefault()
+			this.props.edit(ct)
+		},
+		unsel(e){
+			e.preventDefault()
+			this.props.unsel()
+		},
+		_getDataForm(){
+			let fd = new FormData(this.$('form'))
+			return {
+				"nom":fd.get('nom'),
+				"prenom":fd.get('prenom'),
+				"email":fd.get('email')
+			}
+		}
+	}
+</script>
+</formContact>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="http://www.iut-fbleau.fr/css/tacit.css">
+		<link rel="stylesheet" href="./css/style.css">
+		<script src="./cor/memory.js"></script>
+
+		<title>Memory</title>
+	</head>
+
+	<body container>
+		<h1>Memory</h1>
+		<div grid="strech top">
+			<div column>
+
+				<div grid="center">
+					<div column>
+						<img  src="./images/off.png" alt="" />
+						<img  src="./images/off.png" alt="" />
+						<img  src="./images/off.png" alt="" />
+					</div>
+					<div column>
+						<img  src="./images/off.png" alt="" />
+						<img  src="./images/off.png" alt="" />
+						<img  src="./images/off.png" alt="" />
+					</div>
+					<div column>
+						<img  src="./images/off.png" alt="" />
+						<img  src="./images/off.png" alt="" />
+						<img  src="./images/off.png" alt="" />
+					</div>
+
+				</div>
+			</div>
+
+			<div column>
+				<h3>Règles</h3>
+				<p>
+					Pendant une seconde, vous verrez l'état de l'ensemble 
+					des ampoules, puis elles seront éteintes. Vous devrez 
+					alors cliquer sur celles qui étaient allumées.
+				</p> 
+
+				<button type="submit" onclick="Memory.Play()">COMMENCER</button>
+				<div id="temps">10</div>
+
+				<div id="perdu">
+					<p>Perdu ! </p>
+				</div>
+				<div id="gagne">
+					<p>Gagné ! </p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>tp dom</title>
+		<link rel="stylesheet" href="http://www.iut-fbleau.fr/css/tacit.css">
+		<script src="https://cdn.jsdelivr.net/npm/riot@5.3.0/riot+compiler.min.js"></script>
+		<script src="tags/App.riot" type="riot"></script>
+		<script src="tags/TableContacts.riot" type="riot"></script>
+		<script src="tags/FormContact.riot" type="riot"></script>
+		<script src="js/model.js"></script>
+
+
+	</head>
+	<body container>
+		<app></app>
+	</body>
+	<script>
+		riot.compile().then(()=>{
+			let model = makeModel()
+			riot.install(function(component){
+				if (component.name == "app")
+					component.model = model
+			})
+			riot.mount("app")
+		})
+	</script>
+</html>

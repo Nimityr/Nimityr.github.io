@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Cinema</title>
+		<link rel="stylesheet" href="css/concise.css">
+		<link rel="stylesheet" href="css/concise-utils.min.css">
+		<link rel="stylesheet" href="css//concise-ui.min.css">
+		<link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="./css/style.css">
+
+		<!-- Javascript -->
+
+		<!--script src="include/riot+compiler.min.js"></script-->
+		<script src="https://cdn.jsdelivr.net/gh/riot/riot/riot%2Bcompiler.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/riot/route/dist/route.min.js"></script>
+		<script src="include/serviceAjax.js"></script>
+		<script src="include/constantes.js"></script>
+
+
+		<!-- les composants -->
+
+		<script src="tags/App.tag" type="riot/tag"></script>
+		<script src="tags/Spinner.tag" type="riot/tag"></script>
+		<script src="tags/Film.tag" type="riot/tag"></script>
+		<script src="tags/Size.tag" type="riot/tag"></script>
+
+
+	</head>
+	<body>
+		<div container>
+			<App></App>
+
+	</body>
+	<script>
+		riot.mixin('serviceAjax', makeServiceAjax());
+		riot.mixin(constantes());
+		riot.mixin('bus',{"bus":riot.observable()});
+		riot.mount('*',null);
+	</script>
+		</div>	
+</html>

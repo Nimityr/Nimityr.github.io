@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<link rel="stylesheet" href="http://www.iut-fbleau.fr/css/tacit.css">
+		<style>
+.menu {
+	text-align: center;
+}
+
+	.row {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.cell {
+		width: 20px;
+		height: 20px;
+		font-size: 20px;
+		border: 1px solid black;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		font-weight: bold;
+	}
+		</style>
+	</head>
+
+	<body>
+		<menu class="menu">
+			<button id="next-gen">Next</button>
+			<button id="autoplay">Auto</button>
+			<br><br>
+			#Generation: <span id="generation-value"></span> | Grid size: <span id="grid-size-value"></span>
+		</menu>
+
+		<div id="container"></div>
+	</body>
+	<script src="script.js"></script>
+</html>

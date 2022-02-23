@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Covid 19</title>
+    <link rel="stylesheet" href="http://www.iut-fbleau.fr/css/tacit.css">
+    <script src="https://cdn.jsdelivr.net/npm/riot@5.3.0/riot+compiler.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="src/tags/app.riot" type="riot"></script>
+    <script src="src/tags/date.riot" type="riot"></script>
+    <script src="src/tags/liste.riot" type="riot"></script>
+    <script src="src/tags/tableau.riot" type="riot"></script>
+    <script src="src/js/Donnees.js" charset="utf-8"></script>
+  </head>
+
+  <body container>
+    <app titre="Covid 19"></app>
+  </body>
+
+  <script>
+    riot.compile().then(() =>
+    {
+      let donnees = new Donnees();
+
+      riot.install(function (component)
+      {
+        if (component.name == "app")
+        {
+          component.donnees = donnees;
+        }
+      });
+
+      riot.mount("app");
+    });
+  </script>
+</html>

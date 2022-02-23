@@ -1,0 +1,75 @@
+<app>
+<h1>Gestion des contacts</h1>
+<div grid>
+	<div column="8">
+		<tableContacts contacts = {state.contacts} sel={ sel } message={ state.message }>
+		</tableContacts>
+		<button type="submit" onclick={save} >Sauver</button>
+	</div>
+
+	<div column="4">
+		<formContact unsel = { unsel } add={ add } del={ del } edit = { edit } content={state.ct}></formContact>
+	</div>
+
+</div>
+<script>
+	export default {
+		onBeforeMount(props,state){
+			state.contacts = this.model.getContacts()
+		},
+		add(ct){
+			if (!this.state.contacts.find((c) => c.email == ct.email)){
+				this.state.contacts.push(ct)
+				this.state.ct=null
+				//this.state.message = 'Contact ajouté'
+			} else {
+
+				//	this.state.message = 'Contact déjà présent' 
+
+			}
+
+			this.update()
+		},
+		edit(ct){
+			let c = this.state.contacts.find(c => c.email == ct.email)
+			c.nom = ct.nom
+			c.prenom  = ct.prenom
+			c.email = ct.email
+			this.state.ct = null
+			this.update()
+
+
+		},
+		del(ct){
+			this
+				.state
+				.contacts = this.state.contacts.filter(c  => c.email != ct.email)
+			this.state.ct = null
+			//		this.state.message = 'Contact supprimé'
+			this.update()
+		},
+		sel(ct){
+			this.state.ct = ct
+			this.update()
+		},
+		unsel(){
+			this.state.ct = null
+			this.update()
+
+		},
+		save(){
+			this.model.saveContacts(this.state.contacts)
+
+
+		},
+		state : {
+			contacts : [],
+			ct : null,
+			message : null
+
+		}
+
+	}
+
+</script>
+</app>

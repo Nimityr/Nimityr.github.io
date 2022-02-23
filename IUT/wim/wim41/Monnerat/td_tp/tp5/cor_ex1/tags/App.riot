@@ -1,0 +1,43 @@
+<app>
+
+<h1>Gestion des contacts</h1>
+<div grid>
+
+	<div column="8">
+		<!-- table -->
+		<tablecontacts remove = { remove } contacts = {state.contacts}></tablecontacts>
+		<button type="submit" onclick = { save }>Sauver</button>
+	</div>
+
+	<div column="4">
+		<formcontact add = { add   } contact = { state.contact } ></formcontact>
+	</div>
+</div>
+<script>
+	export default {
+
+		onBeforeMount(props,state){
+			state.contacts = this.model.getContacts()
+		},
+		state : {
+			contacts : [],
+			contact : null
+		},
+		add(ct){
+			if (!this.state.contacts.find(c  => c.email == ct.email)){
+				this.state.contact = null
+				this.state.contacts.push(ct)
+				this.update()
+			}
+		},
+		remove(ct){
+			this.state.contacts = this.state.contacts.filter ( c => c.email != ct.email)
+			this.state.contact = ct
+			this.update()
+		},
+		save(){
+			this.model.saveContacts(this.state.contacts)
+		}
+	}
+</script>
+</app>

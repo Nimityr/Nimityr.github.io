@@ -1,0 +1,48 @@
+<formcontact>
+<h4>Saisie</h4>
+<form onsubmit = { add } >
+	<fieldset>
+		<div>
+			<label  for="prenom">Prénom</label><br>
+			<input  id="prenom"  name="prenom" placeholder="Prénom"  type="text" required>
+		</div>
+		<div>
+			<!-- Text input-->
+			<label  for="nom">Nom</label><br>
+			<input   id="nom"  name="nom" placeholder="Nom"  type="text" required>
+		</div>
+		<div>
+			<!-- Text input-->
+			<label  for="email">Email</label><br>
+			<input  id="email"  name="email" placeholder="Email"  type="email" required>
+		</div>
+		<!-- Button -->
+		<div>
+			<button type="submit">Ajouter</button>
+			<button type="reset">Effacer</button>
+		</div>
+	</fieldset>
+</form>
+<script>
+	export default {
+	onBeforeUpdate(props,state){
+	this.$('prenom').value = props.contact.prenom || ""
+	this.$('nom').value    = props.contact.nom || ""
+	this.$('email').value  = props.contact.email || ""
+
+	},
+		add(e){
+			e.preventDefault()
+			let fd = new FormData(e.target)
+
+			this.props.add ({
+				"nom":fd.get('nom'),
+				"prenom":fd.get('prenom'),
+				"email":fd.get('email')
+			})
+			e.target.reset()
+		}
+	}
+</script>
+</formcontact>
+

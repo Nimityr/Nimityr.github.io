@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title></title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+		<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+		<link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+		<script src="/js/chat.js"></script>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="page-header">
+				<h3>Chat</h3>
+			</div>
+			<form class="pull-right" id="form_auth">
+				<div class="input-append">
+					<input id="nom" class="span2 inline" id="appendedInputButton" type="text">
+					<button id="button_nom" class="btn inline" type="submit">Se connecter</button>
+				</div>
+			</form>
+			<div id="espace_chat">
+				<button id="out">
+					<i class="icon-off"></i>
+				</button>
+				<div  class="row-fluid">
+					<div class="span4">
+						<div class="page-header">
+							<h3>Utilisateurs en ligne</h3>
+						</div>
+						<div id="users">
+						</div>
+					</div>
+					<div class="span8">
+						<div class="page-header">
+							<h3>Messages</h3>
+						</div>
+						<div id="messages" class="well" style="height:300px;overflow-y:auto;" >
+							<ul class="unstyled" id="liste_message">
+								</ul>
+								</div>
+							</div>
+						</div>
+						<form id="form" class="form-inline" action="" method="post">
+							<input class="input-block-level" id="message" type="text">  
+						</form>
+					</div>
+
+				</div>
+			</body>
+		</html>

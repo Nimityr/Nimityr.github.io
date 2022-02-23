@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>tp dom</title>
+		<link rel="stylesheet" href="http://www.iut-fbleau.fr/css/tacit.css">
+
+		<script src="./js/contacts.js"></script>
+		<style>
+		#contacts {
+	/*				width:100%;*/
+		}
+		#contacts tbody{
+			cursor:pointer;
+		}
+		#contacts td{
+			/*	width:33%;*/
+		}
+		#contacts tbody tr:hover{
+			background-color:#eeeeee;
+		}
+		</style>
+		<script>
+		</script>
+	</head>
+	<body container>
+
+		<h1>TP DOM</h1>
+		<div grid>
+			<div column="8">
+				<h4>Contacts</h4>
+				<table id="contacts">
+					<thead>
+						<tr>
+							<th>Nom</th>
+							<th>Prénom</th>
+							<th>Email</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+				<button type="submit" id="sauver">Sauver</button>
+			</div>
+			<div column="4">
+				<h4>Saisie</h4>
+				<form id="form" method="POST">
+					<fieldset>
+						<div>
+							<label  for="prenom">Prénom</label><br>
+							<input id="prenom" name="prenom" placeholder="Prénom"  type="text" required>
+						</div>
+						<div>
+							<!-- Text input-->
+							<label  for="nom">Nom</label><br>
+							<input id="nom" name="nom" placeholder="Nom"  type="text" required>
+						</div>
+						<div>
+							<!-- Text input-->
+							<label  for="email">Email</label><br>
+							<input id="email" name="email" placeholder="Email"  type="email" required>
+						</div>
+						<!-- Button -->
+						<div>
+							<button type="submit" id="ajouter" >Ajouter</button>
+						</div>
+					</fieldset>
+				</form>
+				<div>Cliquez sur une ligne pour la supprimer.</div>
+			</div>
+		</div>
+	</body>
+</html>
